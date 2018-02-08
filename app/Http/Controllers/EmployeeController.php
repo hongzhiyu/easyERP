@@ -23,23 +23,31 @@ class EmployeeController extends Controller
 
 		if( $request->isMethod('POST')){
 			//验证
+			// $this->validate($request, [
+			// 	'Employee.ename'=>'required',
+			// 	'Employee.ework'=>'required',
+			// 	'Employee.year'=>'required|integer',
+			// 	'Employee.month'=>'required|integer',
+			// 	'Employee.day'=>'required|integer',
+			// ]);
 			$this->validate($request, [
 				'Employee.ename'=>'required',
 				'Employee.ework'=>'required',
-				'Employee.year'=>'required|integer',
-				'Employee.month'=>'required|integer',
-				'Employee.day'=>'required|integer',
+				'Employee.edate'=>'required'
 			]);
 
 			$data = $request->input('Employee');
 			$eadvatar = $request->file('eadvatar');
 			$eresume = $request->file('eresume');
-			$newdata = [
+			/*$newdata = [
 				'ename'=>$data['ename'],
 				'ework'=>$data['ework'],
 			];
 			$newdata['edate'] = mktime(0,0,0,$data['month'],$data['day'],$data['year']);
-
+			*/
+		
+			$data['edate'] = strtotime($data['edate']);
+			echo $data['edate'];
 			//头像文件是否上传成功
 			if($eadvatar == null || $eresume == null){
 				return redirect()->back()->withInput();
@@ -55,7 +63,8 @@ class EmployeeController extends Controller
 				Storage::disk('advatar')->put($eadvatarname, file_get_contents($realPath));
 
 				//$employee->eadvatar = $eadvatarname;
-				$newdata['eadvatar'] = $eadvatarname;
+				// $newdata['eadvatar'] = $eadvatarname;
+				$data['eadvatar'] = $eadvatarname;
 
 			}
 			else{
@@ -77,13 +86,14 @@ class EmployeeController extends Controller
 				// $employee->eresume = $eresumename; //
 				////////////////////////////////////////
 
-				$newdata['eresume'] = $eresumename;
+				// $newdata['eresume'] = $eresumename;
+				$data['eresume'] = $eresumename;
 
 			}else{
 				return redirect()->back()->withInput();
 			}
 
-			if($employee::create($newdata)){
+			if($employee::create($data)){
 				return redirect('employee/show')->with('success', '添加成功啦！');;
 			}else{
 				return redirect()->back()->withInput();

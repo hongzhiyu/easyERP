@@ -1,11 +1,20 @@
-<form class="form-inline">
-  <div class="form-group">
-    <label for="exampleInputName2">Name</label>
-    <input type="text" class="form-control" id="exampleInputName2" placeholder="Jane Doe">
+<form class="form-inline " action="">
+
+{{ csrf_field() }}
+
+  <div class="form-group col-md-12">
+	<legend>人事管理</legend>
+	<select class="form-control" name="_Date['type']">
+	  <option>员工请假</option>
+	  <option>企业假期</option>
+	</select>
+    <label for="exampleInputName2">开始日期</label>
+    <input type="date" name="_Date['start']" class="form-control">
+    <label for="exampleInputName2">结束日期</label>
+    <input type="date" name="_Date['end']" class="form-control">
+  <button type="submit" class="btn btn-default">提交</button>
+    
   </div>
-  <div class="form-group">
-    <label for="exampleInputEmail2">Email</label>
-    <input type="email" class="form-control" id="exampleInputEmail2" placeholder="jane.doe@example.com">
-  </div>
-  <button type="submit" class="btn btn-default">Send invitation</button>
+
+
 </form>

@@ -28,3 +28,6 @@ Route::any('employee/show','EmployeeController@show');
 Route::any('employee/add','EmployeeController@add');
 Route::any('employee/update/{id}','EmployeeController@update');
 Route::any('employee/delete/{id}','EmployeeController@delete');
+
+Route::any('person/index','PersonController@index');
+

@@ -6,4 +6,5 @@
         <div class="panel-body">
             @include('employee._form')
         </div>
+    </div>
 @stop

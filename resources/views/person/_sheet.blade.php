@@ -1,22 +1,17 @@
-<div>
-	<form class="form-inline " action="">
-	{{ csrf_field() }}
-		<div class="form-group col-md-12">
-			<legend>考勤表</legend>
-			<select class="form-control">
-				@foreach($names as $name)
-					<option>{{$name}}</option>
-				@endforeach
-			</select>
-
-			<button type="submit" class="btn btn-default" id="getSheet">查询</button>
-		</div>
-	</form>
-
-	<div>
-		<table id="sheet" class="table table-hover table-condensed table-striped">
-			
-		</table>
-	</div>
-
-</div>
+<table  class="table table-hover table-condensed table-striped">
+	<thead>
+	<tr>
+		<th>1</th>
+		<th>2</th>
+		<th>3</th>
+	</tr>
+	</thead>
+	<tbody>
+	<tr>
+	{{-- @foreach($arrays as $array)
+		<td>{{$array}}</td>
+	@endforeach --}}
+	<td>{{$arrays}}</td>
+	</tr>
+	</tbody>
+</table>

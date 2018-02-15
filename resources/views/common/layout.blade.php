@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-	<meta charset="UTF-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="csrf-token" content="{{ csrf_token() }}">
 	<title>Document</title>
 	<script src="{{ asset('js/jquery/jquery.min.js') }}" ></script>
 	<link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap/bootstrap.min.css') }}">
@@ -47,4 +48,5 @@
 	</div>
 
 </body>
+@yield('js')
 </html>

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Employee;
+use App\Models\Employee;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -21,7 +21,7 @@ class EmployeeController extends Controller
 	{
 		$employee = new Employee();
 
-		if( $request->isMethod('POST')){
+		if( $request->isMethod('POST') ){
 			//验证
 			// $this->validate($request, [
 			// 	'Employee.ename'=>'required',
@@ -30,7 +30,7 @@ class EmployeeController extends Controller
 			// 	'Employee.month'=>'required|integer',
 			// 	'Employee.day'=>'required|integer',
 			// ]);
-			$this->validate($request, [
+			$this->validate($request, [ 
 				'Employee.ename'=>'required',
 				'Employee.ework'=>'required',
 				'Employee.edate'=>'required'

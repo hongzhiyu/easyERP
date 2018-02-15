@@ -1,7 +1,7 @@
-<form id="sheetform" class="form-inline " action="{{ url('person/getsheet') }}" method="POST" enctype="multipart/form-data">
+<form id="sheetform" class="form-horizontal " action="{{ url('person/getsheet') }}" method="POST" enctype="multipart/form-data">
 {{ csrf_field() }}
-	<div class="form-group col-md-12">
-		<legend>考勤情况</legend>
+	<legend>考勤情况</legend>
+	<div class="form-group col-md-2">
 		<label for="personname">员工姓名：</label>
 		<select name="personname" class="form-control">
 			@foreach($names as $name)
@@ -9,12 +9,19 @@
 			@endforeach
 		</select>
 
-		<label for="sheetfile">考勤表</label>
-		<input type="file" class="file form-control" name="sheetfile">
-		<button type="submit" class="btn btn-default" id="getSheet">查询</button>
+		{{-- <label for="sheetfile">考勤表</label>
+		<input type="file" class="file form-control" name="sheetfile"> --}}
 		
 	</div>
-
+	<div class="form-group col-md-12">
+		<label for="textarea">考勤记录</label>
+		<textarea class="form-control" rows="6" name="sheetstr"></textarea>
+	</div>
+	<div class="form-group">
+		<div class="col-sm-10">
+		<button type="submit" class="btn btn-default" id="getSheet">查询</button>
+		</div>
+	</div>
 </form>
 
 <script type="text/javascript">
@@ -44,6 +51,7 @@ $(document).ready(function(){
 		            processData: false,
 		      	success:function( html ){  
 		      		console.log( html );
+		      		// $('#sheet').append( html );
 		      	},  
 		      	// error:function(e){  
 		       //    		alert("网络错误，请重试！！");  

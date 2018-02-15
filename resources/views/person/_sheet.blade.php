@@ -1,4 +1,4 @@
-<table  class="table table-hover table-condensed table-striped">
+{{-- <table  class="table table-hover table-condensed table-striped">
 	<thead>
 	<tr>
 		<th>1</th>
@@ -8,10 +8,12 @@
 	</thead>
 	<tbody>
 	<tr>
-	{{-- @foreach($arrays as $array)
-		<td>{{$array}}</td>
-	@endforeach --}}
+	
 	<td>{{$arrays}}</td>
 	</tr>
 	</tbody>
 </table>
+ --}}
+
+ <p>{{$name}}</p>
+ <p>{{$sheetstr}}</p>

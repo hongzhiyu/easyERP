@@ -25,6 +25,6 @@
 @stop
 
 @section('js')
-	{{-- <script src="{{ asset('js/person/person.js') }}" ></script> --}}
+	<script src="{{ asset('js/person/person.js') }}" ></script>
 	
 @stop

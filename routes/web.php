@@ -30,5 +30,5 @@ Route::any('/employee/update/{id}','EmployeeController@update');
 Route::any('/employee/delete/{id}','EmployeeController@delete');
 
 Route::any('/person/index','PersonController@index');
-Route::any('/person/getsheet', 'PersonController@getsheet');
+Route::post('/person/getsheet', 'PersonController@getsheet');
 

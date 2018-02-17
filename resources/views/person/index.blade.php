@@ -18,13 +18,16 @@
 		
 		</div>
 	</div>
-
+	
 	<div id="sheet">
+		
 	</div>
-
+	
 @stop
 
 @section('js')
 	<script src="{{ asset('js/person/person.js') }}" ></script>
-	
+@stop
+@section( 'css' )
+	<link rel="stylesheet" type="text/css" href="{{ asset('css/person/person.css') }}">
 @stop

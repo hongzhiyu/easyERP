@@ -78,7 +78,7 @@ class Sheet
 		return true;
 	}
 	
-	public function deal ( $str )
+	public function deal ( $str, $days )
 	{
 		// $newDayRecords = array_fill( 0, 6, null );
 		$timepoint = array('8:00','12:00','13:30','17:30','18:30','21:30');

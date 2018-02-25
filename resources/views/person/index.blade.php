@@ -1,33 +1,23 @@
 @extends('common.layout')
 
 @section('content')
-	<div class="panel panel-default">
-		<div class="panel-heading">人事管理</div>
-		<div class="panel-body">
-
-			@include('person._form')
-
+	
+	<div class="row">
+		<div class="col-md-2">
+			<ul class="nav nav-tabs ">
+				<li  role="presentation" class="active"><a id="day" href="{{ url('person/day') }}">假期管理</a></li>
+				<li  role="presentation" class=""><a id="salary" href="{{ url('person/salary') }}">薪资计算</a></li>
+			</ul>
 		</div>
 	</div>
 
-	<div class="panel panel-default">
-		<div class="panel-heading">考情情况</div>
-		<div class="panel-body">
+	<div id="personcont">
 
-			@include('person._sheetform')
-		
-		</div>
-	</div>
-	
-	<div id="sheet">
+	@include( 'person._day' )
 		
 	</div>
-	
 @stop
 
-@section('js')
-	<script src="{{ asset('js/person/person.js') }}" ></script>
-@stop
 @section( 'css' )
 	<link rel="stylesheet" type="text/css" href="{{ asset('css/person/person.css') }}">
 @stop

@@ -3,11 +3,14 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<meta name="csrf-token" content="{{ csrf_token() }}">
-	<title>Document</title>
+	<title>easyERP</title>
 	<script src="{{ asset('js/jquery/jquery.min.js') }}" ></script>
+	<script src="{{ asset('js/bootstrap.min.js') }}" ></script>
 	<link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap/bootstrap.min.css') }}">
 	<link rel="stylesheet" type="text/css" href="{{ asset('css/index/index.css') }}">
 	@yield('css')
+	@yield('js')
+
 </head>
 <body>
 	@section('header')
@@ -18,20 +21,17 @@
 			@section('nav')
 			<!--导航 -->
 			<div class="col-md-2 col-sm-2" >
-				{{--<ul class="list-group ">
-					<li><a href="{{url('') }}">首页</a></li>
-					<li ><a href="{{url('employee/show') }}">员工管理系统</a></li>
-					<li ><a href="{{url('person/index') }}">人事管理</a></li>
-				</ul>--}}
-				
 				    <a href="{{url('') }}" class="list-group-item">
 				        <p class="list-group-item-text">首页</p>
 				    </a>
 				    <a href="{{url('employee/show') }}" class="list-group-item">
-				        <p class="list-group-item-text">员工管理系统</p>
+				        <p class="list-group-item-text">员工管理</p>
 				    </a>
 				    <a href="{{url('person/index') }}" class="list-group-item">
 				        <p class="list-group-item-text">人事管理</p>
+				    </a>
+				    <a href="{{url('storage/index') }}" class="list-group-item">
+				        <p class="list-group-item-text">仓储管理</p>
 				    </a>
 		
 			</div>
@@ -48,5 +48,4 @@
 	</div>
 
 </body>
-@yield('js')
 </html>

@@ -13,7 +13,24 @@ class PersonController extends Controller
 
 		$names = ['洪志宇', '得到的', 'dsagkl'];
 
-		return view('person/index',[
+		return view('person.index',[
+			'names'=>$names
+		]);
+	}
+
+	public function salary ( )
+	{
+		$names = ['洪志宇', '得到的', 'dsagkl'];
+
+		return view('person._salary',[
+			'names'=>$names
+		]);
+	}
+	public function day ( )
+	{
+		$names = ['洪志宇', '得到的', 'dsagkl'];
+
+		return view('person._day')->with( [
 			'names'=>$names
 		]);
 	}

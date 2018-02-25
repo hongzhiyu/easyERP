@@ -18,35 +18,12 @@
 	</thead>
 
 	<tbody>
-	
-		{{-- @foreach($sheetarr as $key=>$day)
-		<tr>
-			<td >{{ $key+1}}</td>
-			@foreach($day as $time)
-				@if ( !$time[ 1 ])
-					<td class="warning">{{ $time[0]}}</td>
-				@else
-					<td >{{ $time[0]}}</td>
-				@endif
-			@endforeach
-		</tr>
-		@endforeach --}}
-
 		@for ( $i = 0; $i <$days; $i++)
 			<tr>
 				<td >{{ $i + 1}}</td>
 				@if ( isset( $sheetarr[ $i ]))
 					@for( $j = 0; $j < 6; $j++)
-						{{-- @if( isset($sheetarr[ $i ][ $j ]) )
-							@if( $sheetarr[ $i ][ $j ][0] )
-								<td >{{ $sheetarr[ $i ][ $j ][0]}}</td>
-							@else
-								<td class="warning">{{ $sheetarr[ $i ][ $j ][0]}}</td>
-							@endif
-						@else
-							<td>null</td>
-						@endif --}}
-						{{-- <td> {{ $sheetarr[ $i ][ $j ][0]}}</td> --}}
+						
 						@if( isset($sheetarr[ $i ][$j ]) )
 							@if( $sheetarr[ $i ][ $j ][1] )
 								<td >{{ $sheetarr[ $i ][ $j ][0]}}</td>

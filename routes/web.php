@@ -32,4 +32,6 @@ Route::any('/person/salary','PersonController@salary');
 Route::post('/person/getsheet', 'PersonController@getsheet');
 
 Route::any('/storage/index', 'StorageController@index');
+Route::any('/storage/type', 'StorageController@type');
+Route::any('/storage/change', 'StorageController@change');
 

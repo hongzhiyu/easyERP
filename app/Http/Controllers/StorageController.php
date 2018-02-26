@@ -12,4 +12,12 @@ class StorageController extends Controller
 	{
 		return view('storage.index');
 	}
+	public function type ( )
+	{
+		return view('storage.type');
+	}
+	public function change ( )
+	{
+		return view('storage.change');
+	}
 }

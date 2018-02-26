@@ -1,5 +1,5 @@
 $(document).ready( function ( ){
-	
+	$("td,th").addClass("text-center");
 
 	$('.good').each( function ( ){
 

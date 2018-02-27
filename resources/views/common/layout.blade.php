@@ -33,6 +33,15 @@
 				    <a href="{{url('storage/index') }}" class="list-group-item">
 				        <p class="list-group-item-text">仓储管理</p>
 				    </a>
+				    <a href="{{url('blueprint/index') }}" class="list-group-item">
+				        <p class="list-group-item-text">图纸管理</p>
+				    </a>
+				    <a href="{{url('order/index') }}" class="list-group-item">
+				        <p class="list-group-item-text">订单管理</p>
+				    </a>
+				    <a href="{{url('plan/index') }}" class="list-group-item">
+				        <p class="list-group-item-text">生产计划</p>
+				    </a>
 		
 			</div>
 			@show

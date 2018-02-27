@@ -43,10 +43,6 @@
 </table>
 </div>
 </div>
-<script >
-	$('.warning').on( 'click', function ( ){
-		$( this ).toggleClass( 'warning' );
-	});
-</script>
+
 
 

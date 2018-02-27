@@ -26,14 +26,7 @@ class PersonController extends Controller
 			'names'=>$names
 		]);
 	}
-	public function day ( )
-	{
-		$names = ['洪志宇', '得到的', 'dsagkl'];
-
-		return view('person._day')->with( [
-			'names'=>$names
-		]);
-	}
+	
 
 	//处理考情表
 	public function getsheet ( Request $request ) 
@@ -56,10 +49,5 @@ class PersonController extends Controller
 		])->render( );
 		return $a;		
 
-		// return $sheetarr;
-
-		// dd($html);
-
-		// dd($sheetarr[0][1][0]);
 	}
 }

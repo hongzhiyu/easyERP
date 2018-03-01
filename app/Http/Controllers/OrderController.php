@@ -20,5 +20,15 @@ class OrderController extends Controller
 			'id' =>$id
 		] );
 	}
+
+	public function add ( )
+	{
+		return view('order.add');
+	}
+
+	public function delivery( )
+	{
+		return view('order.delivery');
+	}
 	
 }

@@ -10,6 +10,7 @@ class PersonController extends Controller
 	//展示
 	public function index ( )
 	{
+		date_default_timezone_set('PRC'); 
 
 		$names = ['洪志宇', '得到的', 'dsagkl'];
 

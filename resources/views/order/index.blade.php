@@ -5,8 +5,9 @@
 <div class="row">
 	<div class="col-md-12">
 		<ul class="nav nav-tabs ">
-			<li  role="presentation" class="active"><a id="day" href="{{ url('order/index') }}">订单列表</a></li>
-			<li  role="presentation" class=""><a id="salary" href="{{ url('person/salary') }}">添加订单</a></li>
+			<li  role="presentation" class="active"><a href="{{ url('order/index') }}">订单列表</a></li>
+			<li  role="presentation" class=""><a  href="{{ url('order/add') }}">添加订单</a></li>
+			<li  role="presentation" class=""><a  href="{{ url('order/delivery') }}">送货单</a></li>
 		</ul>
 	</div>
 </div>

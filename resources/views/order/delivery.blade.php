@@ -5,38 +5,18 @@
 <div class="row">
 	<div class="col-md-12">
 		<ul class="nav nav-tabs ">
-			<li  role="presentation" class="active"><a href="{{ url('order/index') }}">订单详情</a></li>
+			<li  role="presentation" class=""><a href="{{ url('order/index') }}">订单列表</a></li>
 			<li  role="presentation" class=""><a  href="{{ url('order/add') }}">添加订单</a></li>
-			<li  role="presentation" class=""><a  href="{{ url('order/delivery') }}">送货单</a></li>
+			<li  role="presentation" class="active"><a  href="{{ url('order/delivery') }}">送货单</a></li>
 		</ul>
 	</div>
 </div>
 
 <div class="panel panel-default">
 	<div class="panel-heading">
-		<strong>订单{{ $id }}</strong>
-		<div class="btn-group btn-group-sm col-md-offset-9">
-			<button type="button" class="btn btn btn-default btn-warning ">修改</button>
-
-		</div>
-		<a href="{{ url('order/index') }}" class="btn btn btn-link  ">返回</a>
-
-
-
+		<strong>送货单</strong>
 	</div>
 	<div class="panel-body">
-			<div class="row">
-			<div class="col-md-6">
-				<ol class="breadcrumb">
-				订单状态：
-					<li><button  type="button" class="btn btn-xs btn-default" >确认回传</button></li>
-					<li><button  type="button" class="btn btn-xs btn-default">生产中</button></li>
-					<li class="active"><button  type="button" class="btn btn-xs btn-success">送货中</button></li>
-					<li><button  type="button" class="btn btn-xs btn-default">交货完成</button></li>
-					<li><button  type="button" class="btn btn-xs btn-default">结款</button></li>
-				</ol>
-			</div>
-		</div>
 		<div class="row">
 			<div class="col-md-6">
 				<h4 class="text-center">采购方</h4><br>
@@ -54,7 +34,11 @@
 			</div>
 		</div>
 		<br>
-
+		<div class="row">
+			<div class="col-md-offset-1">
+				<strong class="text-right">订单状态：</strong><span class="label label-info">确认回传</span>
+			</div>
+		</div>
 		<br>
 		<table class="table table-hover table-bordered table-condensed table-responsive">
 			<caption>订单内容</caption>

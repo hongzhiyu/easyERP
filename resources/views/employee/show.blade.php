@@ -3,36 +3,52 @@
 <link rel="stylesheet" type="text/css" href="{{ asset('css/employee/employee.css') }}">
 @stop
 @section('content')
-	<button type="button" class="btn btn-default"><a href="{{ url('employee/add') }}">新增</a></button>
-	<table id="employee_info" class="table table-hover table-condensed table-striped" >
-		<thead>
-			<tr>
-				<th>编号</th>
-				<th>头像</th>
-				<th>姓名</th>
-				<th>职务</th>
-				<th>入职时间</th>
-				<th>简历</th>
-				<th>操作</th>
+<div class="row">
+	<div class="col-md-12">
+		<ul class="nav nav-tabs ">
+			<li  role="presentation" class="active"><a  href="{{ url('employee/show') }}">员工列表</a></li>
+			<li  role="presentation" class=""><a  href="{{ url('employee/add') }}">新增员工</a></li>
+		</ul>
+	</div>
+</div>
+<br>
+<table id="employee_info" class="table table-hover table-bordered table-condensed table-striped" >
+	<thead>
+		<tr>
+			<th>#</th>
+			<th>工号</th>
+			<th>头像</th>
+			<th>姓名</th>
+			<th>职务</th>
+			<th>入职时间</th>
+			<th>简历</th>
+			<th>操作</th>
+		</tr>
+	</thead>
+	<tbody>
+		@for( $i = 0; $i < count( $employees ); $i ++)
+		<tr>
+		<td>{{ $i + 1 }}</td>
+			<td>{{$employees[$i]->id}}</td>
+			<td><img src="{{ '../../storage/app/images/employee/'.$employees[ $i ]->eadvatar }}"></td>
+			<td>{{$employees[ $i ]->ename}}</td>
+			<td>{{$employees[ $i ]->ework}}</td>
+			<td>{{ date('Y-m-d', $employees[ $i ]->edate)}}</td>
+			<td><a href="{{ '../../storage/app/files/resume/'.$employees[ $i ]->eresume}}">{{$employees[ $i ]->eresume}}</a></td>
+			<td>
+				<div class="btn-group btn-group-xs">
+				<button type="button" class="btn btn-default update" url="{{ url('employee/update') .'/' .$employees[ $i ]->id }}">编辑</button>
+					<button type="button" class="btn btn-default delete" url="{{ url('employee/delete') .'/' .$employees[ $i ]->id}}" >删除</button>
+				</div>
+				
+				</td>
 			</tr>
-		</thead>
-		<tbody>
-			@foreach($employees as $employee)
-				<tr>
-					<th>{{$employee->id}}</th>
-					<td><img src="{{ '../../storage/app/images/employee/'.$employee->eadvatar }}"></td>
-					<td>{{$employee->ename}}</td>
-					<td>{{$employee->ework}}</td>
-					<td>{{ date('Y-m-d', $employee->edate)}}</td>
-					<td><a href="{{ '../../storage/app/files/resume/'.$employee->eresume}}">{{$employee->eresume}}</a></td>
-					<td>
-						<a href=" {{url('employee/update', ['id' => $employee->id ]) }}" >编辑</a>
-						<a href=" {{url('employee/delete', ['id' => $employee->id ]) }}" 
-							onclick="if (confirm('确定要删除吗？') == false) return false; ">删除</a>
-					</td>
-				</tr>
-			@endforeach
+			@endfor
 		</tbody>
 
 	</table>
+	@stop
+
+@section('js')
+<script src="{{ asset('js/employee/employee.js') }}"></script>
 @stop

@@ -11,9 +11,9 @@
 	</div>
 </div>
 
+<br>
 
 <div class="panel panel-default">
-	<div class="panel-heading">人事管理</div>
 	<div class="panel-body">
 		<form class=" " action="">
 			{{ csrf_field() }}
@@ -40,11 +40,11 @@
 				</div>
 				<div class="form-group ">
 					<label for="_Date['start']">开始日期</label>
-					<input type="datetime-local" name="_Date['start']" class="form-control">
+					<input type="datetime-local" name="_Date['start']" class="form-control" value="{{date('Y-m-d').'T'.date('H:i')}}">
 				</div>
 				<div class="form-group ">
 					<label for="_Date['end']">结束日期</label>
-					<input type="date" name="_Date['end']" class="form-control">
+					<input type="datetime-local" name="_Date['end']" class="form-control">
 				</div>
 				
 			</div>

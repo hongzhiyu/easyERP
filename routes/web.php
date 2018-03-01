@@ -37,6 +37,8 @@ Route::any('/storage/change', 'StorageController@change');
 
 Route::any('/order/index', 'OrderController@index');
 Route::get('/order/detail/{id}', 'OrderController@detail');
+Route::any('/order/add', 'OrderController@add');
+Route::any('/order/delivery', 'OrderController@delivery');
 
 Route::any('/blueprint/index', 'BlueprintController@index');
 

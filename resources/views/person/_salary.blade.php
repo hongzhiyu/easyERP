@@ -11,11 +11,10 @@
 		</ul>
 	</div>
 </div>
-
+<br>
 <div id="personcont">
 
 	<div class="panel panel-default">
-		<div class="panel-heading">薪资计算</div>
 		<div class="panel-body">
 			<form id="sheetform" url="{{ url('person/getsheet') }}">
 				{{ csrf_field() }}
@@ -27,7 +26,7 @@
 						@endforeach
 					</select>
 					<label for="month">年月</label>
-					<input type="month" class="form-control" name="month">
+					<input type="month" class="form-control" name="month" value="{{date('Y-m')}}"> 
 				</div>
 				<div class="form-group form-horizontal">
 					<label for="textarea">考勤记录:</label>

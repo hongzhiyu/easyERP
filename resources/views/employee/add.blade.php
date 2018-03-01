@@ -1,10 +1,22 @@
 @extends('common.layout')
 
 @section('content')
-	<div class="panel panel-default">
-        <div class="panel-heading">新增员工信息</div>
-        <div class="panel-body">
-            @include('employee._form')
-        </div>
-    </div>
+<div class="row">
+	<div class="col-md-12">
+		<ul class="nav nav-tabs ">
+			<li  role="presentation" class=""><a  href="{{ url('employee/show') }}">员工列表</a></li>
+			<li  role="presentation" class="active"><a  href="{{ url('employee/add') }}">新增员工</a></li>
+		</ul>
+	</div>
+</div>
+<br>
+<div class="panel panel-default">
+	<div class="panel-body">
+		@include('employee._form')
+	</div>
+</div>
+@stop
+
+@section('js')
+<script src="{{ asset('js/employee/employee.js') }}"></script>
 @stop

@@ -11,29 +11,30 @@
 		</ul>
 	</div>
 </div>
-
+<br>
 <div class="panel panel-default">
-	<div class="panel-heading">订单列表</div>
 	<div class="panel-body">
-	<form action="" role="form"></form>
-	<label for="_Date['type']">查看</label>
-		<div class="form-inline">
-			<div class="form-group">
-				
-				<select class="form-control input-sm" name="_Date['type']">
-					<option>全部客户</option>
-					<option>嘉诺</option>
-					<option>达意隆</option>
-				</select>
-				<select class="form-control input-sm" name="_Date['type']">
-					<option>状态</option>
-					<option>确认回传</option>
-					<option value="">已交货</option>
-					<option value="">已付款</option>
-					<option>取消</option>
-				</select>
+		<form action="" role="form">
+			{{ csrf_field() }}
+			<div class="form-inline">
+				<div class="form-group">
+					<select class="form-control input-sm" name="_Date['type']">
+						<option>全部客户</option>
+						<option>嘉诺</option>
+						<option>达意隆</option>
+					</select>
+					<select class="form-control input-sm" name="_Date['type']">
+						<option>状态</option>
+						<option>确认回传</option>
+						<option value="">已交货</option>
+						<option value="">已付款</option>
+						<option>取消</option>
+					</select>
+				</div>
+			<button type="submit" class="btn btn-default btn-sm" >查看</button>
 			</div>
-		</div>
+		</form>
+		<br>
 		<table  class="table table-hover ">
 			<thead>
 				<tr>

@@ -11,9 +11,8 @@
 		</ul>
 	</div>
 </div>
-
+<br>
 <div class="panel panel-default">
-	<div class="panel-heading">添加订单</div>
 	<div class="panel-body">
 		<form class="form-horizontal" method="post" enctype="multipart/form-data" action="">
 			{{ csrf_field() }}
@@ -29,7 +28,6 @@
 					</div>
 					<div class="form-group">
 						<label for="name" class="col-sm-2 control-label">客户</label>
-
 						<div class="col-sm-6 ">
 							<select name="" id="" class="form-control">
 								<option value="">广州嘉诺</option>

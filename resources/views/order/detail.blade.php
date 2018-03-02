@@ -11,7 +11,7 @@
 		</ul>
 	</div>
 </div>
-
+<br>
 <div class="panel panel-default">
 	<div class="panel-heading">
 		<strong>订单{{ $id }}</strong>
@@ -30,9 +30,9 @@
 				<ol class="breadcrumb">
 				订单状态：
 					<li><button  type="button" class="btn btn-xs btn-default" >确认回传</button></li>
-					<li><button  type="button" class="btn btn-xs btn-default">生产中</button></li>
-					<li class="active"><button  type="button" class="btn btn-xs btn-success">送货中</button></li>
-					<li><button  type="button" class="btn btn-xs btn-default">交货完成</button></li>
+					
+					<li class="active"><button  type="button" class="btn btn-xs btn-success">交货完成</button></li>
+					
 					<li><button  type="button" class="btn btn-xs btn-default">结款</button></li>
 				</ol>
 			</div>
@@ -49,8 +49,8 @@
 				<h4 class="text-center">供应方</h4><br>
 				<strong class="text-right col-md-4">客户名称:</strong><em><a href="" title="点击查看客户信息">广州永峰机械制造有限公司</a></em><br>
 				<strong class="text-right col-md-4">联系人:</strong><em>洪永祥</em><br>
-				<strong class="text-right col-md-4">收货人联系方式:</strong><em>13588845655</em><br>
-				<strong class="text-right col-md-4">收货地址:</strong><em>广州永峰机械制造有限公司的dz</em>
+				<strong class="text-right col-md-4">联系方式:</strong><em>13588845655</em><br>
+				<strong class="text-right col-md-4">地址:</strong><em>广州永峰机械制造有限公司的dz</em>
 			</div>
 		</div>
 		<br>

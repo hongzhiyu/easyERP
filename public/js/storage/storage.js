@@ -1,5 +1,9 @@
 $(document).ready( function ( ){
-	$("td,th").addClass("text-center");
+	//index
+	$('#update').click( function ( ){
+		var url = $( this ).attr( 'url' );
+		window.location.href = url
+	});
 
 	$('.good').each( function ( ){
 

@@ -32,8 +32,10 @@ Route::any('/person/salary','PersonController@salary');
 Route::post('/person/getsheet', 'PersonController@getsheet');
 
 Route::any('/storage/index', 'StorageController@index');
-Route::any('/storage/type', 'StorageController@type');
-Route::any('/storage/change', 'StorageController@change');
+Route::any('/storage/add', 'StorageController@add');
+Route::any('/storage/show', 'StorageController@show');
+Route::any('/storage/update', 'StorageController@update');
+Route::any('/storage/updatestorage', 'StorageController@updatestorage');
 
 Route::any('/order/index', 'OrderController@index');
 Route::get('/order/detail/{id}', 'OrderController@detail');
@@ -41,5 +43,7 @@ Route::any('/order/add', 'OrderController@add');
 Route::any('/order/delivery', 'OrderController@delivery');
 
 Route::any('/blueprint/index', 'BlueprintController@index');
+Route::any('/blueprint/add', 'BlueprintController@add');
+Route::get('/blueprint/update/{id}', 'BlueprintController@update');
 
 Route::any('/plan/index', 'PlanController@index');

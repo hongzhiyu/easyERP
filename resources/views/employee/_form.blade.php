@@ -4,7 +4,15 @@
 	<div class="form-group">
 		<label for="name" class="col-sm-1 control-label">员工姓名</label>
 		<div class="col-sm-5">
-			<input type="text" name="Employee[ename]" class="form-control" id="name"  placeholder="请输入员工姓名"
+			<input type="text" name="Employee[ename]" class="form-control" id="name"  
+			value="{{old('Employee')['ename'] ? old('Employee')['ename']:$employee->ename}}"
+			>
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="name" class="col-sm-1 control-label">工号</label>
+		<div class="col-sm-5">
+			<input type="text" name="Employee[ename]" class="form-control" id="name"  
 			value="{{old('Employee')['ename'] ? old('Employee')['ename']:$employee->ename}}"
 			>
 		</div>
@@ -58,7 +66,7 @@
 	<div class="form-group">
 		<label for="work" class="col-sm-1 control-label">职务描述</label>
 		<div class="col-sm-5">
-			<input type="text" name="Employee[ework]" class="form-control" id="work" placeholder="职务描述"
+			<input type="text" name="Employee[ework]" class="form-control" id="work" 
 			value="{{old('Employee')['ework'] ? old('Employee')['ework']:$employee->ework}}"
 			>
 		</div>

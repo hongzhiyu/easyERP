@@ -1,5 +1,7 @@
 @extends('common.layout')
-
+@section('nav')
+@include('common._nav',['nav'=>'employee'])
+@stop
 @section('content')
 <div class="row">
 	<div class="col-md-12">

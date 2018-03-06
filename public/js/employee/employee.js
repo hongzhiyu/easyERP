@@ -15,17 +15,17 @@ $( document ).ready( function ( ){
 		}
 	});
 	//新增页面
-	$( '#chooseadvatarbtn' ).click( function ( ){
-		$( '#advatar' ).click( );
+	$( '#chooseavatarbtn' ).click( function ( ){
+		$( '#avatar' ).click( );
 	});
-	$( '#advatar' ).change( function( ){
-		$("#advatarCover").val($(this).val());
+	$( '#avatar' ).change( function( ){
+		$("#avatarCover").val($(this).val());
 	} );
 
 	$( '#chooseresumebtn' ).click( function ( ){
-		$( '#eresume' ).click( );
+		$( '#resume' ).click( );
 	});
-	$( '#eresume' ).change( function( ){
-		$("#eresumeCover").val($(this).val());
+	$( '#resume' ).change( function( ){
+		$("#resumeCover").val($(this).val());
 	} );
 } );

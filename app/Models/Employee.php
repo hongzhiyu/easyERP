@@ -12,5 +12,5 @@ class Employee extends Model
 	
 	protected $table = 'employee_info';
 	public $timestamps = false;
-	protected $fillable = ['ename', 'ework', 'edate', 'eadvatar', 'eresume'];
+	protected $fillable = ['id', 'name', 'work', 'date', 'avatar', 'resume','birth_date', 'sex',];
 }

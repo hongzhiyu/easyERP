@@ -1,5 +1,7 @@
 @extends('common.layout')
-
+@section('nav')
+@include('common._nav',['nav'=>'blueprint'])
+@stop
 @section('content')
 
 <div class="row">

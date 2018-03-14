@@ -3,16 +3,8 @@
 @include('common._nav',['nav'=>'storage'])
 @stop
 @section('content')
-<div class="row">
-	<div class="col-md-12">
-		<ul class="nav nav-tabs ">
-			<li  role="presentation" class="active"><a  href="{{ url('storage/index') }}">仓库一览</a></li>
-			<li  role="presentation" class=""><a  href="{{ url('storage/show') }}">库存列表</a></li>
-			<li  role="presentation" class=""><a  href="{{ url('storage/add') }}">新建物料</a></li>
-			<li  role="presentation" class=""><a href="{{ url('storage/update') }}">更新库存</a></li>
-		</ul>
-	</div>
-</div>
+@include('storage._nav',['nav'=>'index'])
+
 <br>
 <div class="panel panel-default">
 	<div class="panel-heading">仓库平面图

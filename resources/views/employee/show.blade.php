@@ -8,6 +8,11 @@
 @section('content')
 @include('employee._nav', ['nav'=>'show'])
 <br>
+
+<div class="row">
+@include('common.message')
+</div>
+
 <table id="employee_info" class="table table-hover table-bordered  table-striped" >
 	<thead>
 		<tr>

@@ -21,6 +21,10 @@ class OrderController extends Controller
 		] );
 	}
 
+	public function search ( )
+	{
+		return view( 'order.search');
+	}
 	public function add ( )
 	{
 		return view('order.add');

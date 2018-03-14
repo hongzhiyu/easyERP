@@ -4,14 +4,8 @@
 @stop
 @section('content')
 
-<div class="row">
-	<div class="col-md-12">
-		<ul class="nav nav-tabs ">
-			<li  role="presentation" class=""><a  href="{{ url('blueprint/index') }}">图纸列表</a></li>
-			<li  role="presentation" class="active"><a  href="{{ url('blueprint/add') }}">添加图纸</a></li>
-		</ul>
-	</div>
-</div>
+@include('blueprint._nav',['nav'=>'add'])
+
 <br>
 <div class="panel panel-default">
 	<div class="panel-body">
@@ -21,26 +15,33 @@
 				<div class="form-group">
 					<label for="name" class="col-sm-2 control-label">图纸型号：</label>
 					<div class="col-sm-5">
-						<input type="text" name="" class="form-control" id="name"  placeholder="如：1、2、3">
+						<input type="text" name="Blueprint[type]" class="form-control"  >
 					</div>
 				</div>
 				<div class="form-group">
 					<label for="name" class="col-sm-2 control-label">品名：</label>
 					<div class="col-sm-5">
-						<input type="text" name="" class="form-control" id="name"  placeholder="如：焊接头部">
+						<input type="text" name="Blueprint[name]" class="form-control" >
 					</div>
 				</div>
 				<div class="form-group">
 					<label for="name" class="col-sm-2 control-label ">图纸文件:</label>
 					<div class="col-sm-5">
-						<input id="orderfile" type="file" style="display:none" > 
+						<input id="bpfile" name="bpfile" type="file" style="display:none" > 
 						<div class="input-group">
-							<input type="text" class="form-control" id="orderfileCover" >
+							<input type="text" class="form-control" id="bpfileCover" >
 							<span class="input-group-btn">
-								<button class="btn btn-default" id='orderchoosebtn'	 type="button" >选择文件</button>
+								<button class="btn btn-default" id='bpchoosebtn'	 type="button" >选择文件</button>
 							</span>
 						</div>
 					</div>
+				</div>
+				<div class="form-group">
+					<label for="date" class="col-sm-2 control-label">接收时间</label>
+					<div class="col-sm-5">
+						<input type="date" name="Blueprint[date]"  class="form-control" value="{{old('Blueprint')['date'] ?old('Blueprint')['date']:date('Y-m-d')}}"/>
+					</div>
+					<span class="help-block">默认为今天({{date('Y-m-d')}})</span>
 				</div>
 				
 			</div>
@@ -49,4 +50,8 @@
 		</form>
 	</div>
 </div>
+@stop
+
+@section('js')
+<script src="{{ asset('js/blueprint/blueprint.js') }}"></script>
 @stop

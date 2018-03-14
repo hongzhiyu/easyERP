@@ -1,15 +1,10 @@
 @extends('common.layout')
-
+@section('nav')
+@include('common._nav',['nav'=>'blueprint'])
+@stop
 @section('content')
 
-<div class="row">
-	<div class="col-md-12">
-		<ul class="nav nav-tabs ">
-			<li  role="presentation" class="active"><a >修改</a></li>
-			<li  role="presentation" class=""><a  href="{{ url('blueprint/add') }}">添加图纸</a></li>
-		</ul>
-	</div>
-</div>
+@include('blueprint._nav',['nav'=>'update'])
 <br>
 <div class="panel panel-default">
 	<div class="panel-body">

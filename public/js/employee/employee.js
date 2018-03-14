@@ -28,4 +28,14 @@ $( document ).ready( function ( ){
 	$( '#resume' ).change( function( ){
 		$("#resumeCover").val($(this).val());
 	} );
+
+	//统计字数
+	$('#work').bind("input propertychange",function( ){
+		var content_len = $( this ).val().length;
+		console.log(content_len);
+		$('#len').html('字数：'+content_len);
+	});
+	
+
 } );
+

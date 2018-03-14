@@ -56,7 +56,7 @@ return [
         ],
 
         //自定义头像
-        'advatar' => [
+        'avatar' => [
             'driver' => 'local',
             'root' => storage_path('app/images/employee'),
         ],
@@ -66,6 +66,12 @@ return [
             'driver' => 'local',
             'root' => storage_path('app/files/employee'),
         ],
+          //图纸
+        'bpfile' => [
+            'driver' => 'local',
+            'root' => storage_path('app/files/blueprint'),
+        ],
+
 
         's3' => [
             'driver' => 's3',

@@ -4,14 +4,7 @@
 @stop
 @section('content')
 
-<div class="row">
-	<div class="col-md-12">
-		<ul class="nav nav-tabs ">
-			<li  role="presentation" class="active"><a  href="{{ url('person/index') }}">假期管理</a></li>
-			<li  role="presentation" class=""><a  href="{{ url('person/salary') }}">薪资计算</a></li>
-		</ul>
-	</div>
-</div>
+@include('person._nav',['nav'=>'index'])
 
 <br>
 
@@ -43,11 +36,15 @@
 				</div>
 				<div class="form-group ">
 					<label for="_Date['start']">开始日期</label>
-					<input type="datetime-local" name="_Date['start']" class="form-control" value="{{date('Y-m-d').'T'.date('H:i')}}">
+					<input type="date" name="_Date['start']" class="form-control" id="start" value="{{date('Y-m-d')}}">
 				</div>
 				<div class="form-group ">
-					<label for="_Date['end']">结束日期</label>
-					<input type="datetime-local" name="_Date['end']" class="form-control">
+					<label for="_Date['end']" >结束日期</label>
+					<input type="date" name="_Date['end']"  id="end" class="form-control" value="{{date('Y-m-d')}}">
+				</div>
+				<div class="form-group ">
+					<label >天数:</label>
+					<span id="day">7</span>天
 				</div>
 				
 			</div>
@@ -71,6 +68,16 @@
 		假期列表
 	</div>
 	<div class="panel-body">
+		<form action="post" role="form">
+			{{ csrf_field() }}
+			<div class="form-inline">
+				<div class="form-group">
+					<input class="form-control input-sm" name="_Date['type']" type="month">
+				</div>
+				<button type="submit" class="btn btn-default btn-sm" >查看</button>
+			</div>
+		</form>
+		<br>
 		<table class="table table-bordered">
 			<thead>
 				<tr>
@@ -95,7 +102,7 @@
 					<td>没有备注</td>
 					<td>
 						<div class="btn-group btn-group-xs">
-						<button type="button" class="btn btn-default">修改</button>
+							<button type="button" class="btn btn-default">修改</button>
 							<button type="button" class="btn btn-default">删除</button>
 						</div>
 					</td>
@@ -108,7 +115,7 @@
 
 @stop
 
-@section( 'css' )
-<link rel="stylesheet" type="text/css" href="{{ asset('css/person/person.css') }}">
+@section('js')
+<script src="{{ asset('js/person/person.js') }}"></script>
 @stop
 

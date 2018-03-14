@@ -4,32 +4,24 @@
 @stop
 @section('content')
 
-<div class="row">
-	<div class="col-md-12">
-		<ul class="nav nav-tabs ">
-			<li  role="presentation" class="active"><a  href="{{ url('blueprint/index') }}">图纸列表</a></li>
-			<li  role="presentation" class=""><a  href="{{ url('blueprint/add') }}">添加图纸</a></li>
-		</ul>
-	</div>
-</div>
+@include('blueprint._nav',['nav'=>'index'])
 <br>
+<div class="row">
+@include('common.message')
+</div>
+
+
 <div class="panel panel-default">
 	<div class="panel-body">
 		<form action="" role="form">
 			<div class="form-inline">
-				<div class="form-group">
-					<select class="form-control input-sm" name="_Date['type']">
-						<option>全部客户</option>
-						<option>嘉诺</option>
-						<option>达意隆</option>
-						<option>供应商</option>
-					</select>
 					
+				<div class="input-group">
+					<input type="text" class="form-control" placeholder="图纸编号" >
+					<span class="input-group-btn">
+						<button class="btn btn-default" type="button" >查看</button>
+					</span>
 				</div>
-				<div class="form-group">
-					<input type="text" class="form-control input-sm">
-				</div>
-				<button type="submit" class="btn btn-default btn-sm" >查看</button>
 			</div>
 		</form>
 		<br>
@@ -38,7 +30,7 @@
 				<tr>
 					<th>#</th>
 					<th>图纸编号</th>
-					<th>所属客户</th>
+					<th>品名</th>
 					<th>文件</th>
 					<th>接收日期</th>
 					<th>操作</th>
@@ -46,22 +38,23 @@
 			</thead>
 
 			<tbody>
+				@for( $i = 0; $i < count( $bps ); $i ++)
 				<tr>
-					<td>1</td>
-					<td>20180226006</td>
-					<td>广州嘉诺</td>
-					<td><a href="">20180226006.dwg</a></td>
-					<td>2018/2/27</td>
-					
+					<td>{{ $i + 1 }}</td>
+					<td>{{$bps[$i]->type}}</td>
+					<td>{{$bps[$i]->name}}</td>
+					<td>{{$bps[$i]->type}}</td>
+					<td><a href="{{ '../../storage/app/files/blueprint/'.$bps[ $i ]->bpfile}}">{{$bps[$i]->bpfile}}</a></td>
+					<td>{{ date('Y-m-d', $bps[ $i ]->date)}}</td>					
 					<td>
 						<div class="btn-group btn-group-xs">
-							<button type="button" class="btn btn-default update" data-id="1">修改</button>
-							<button type="button" class="btn btn-default">删除</button>
+							<button type="button" class="btn btn-default update"  url="{{ url('blueprint/update') .'/' .$bps[ $i ]->id }}">修改</button>
+							<button type="button" class="btn btn-default delete" url="{{ url('blueprint/delete') .'/' .$bps[ $i ]->id}}">删除</button>
 
 						</div>
 					</td>
 				</tr>
-				
+				@endfor
 			</tbody>
 		</table>
 	</div>

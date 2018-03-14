@@ -39,16 +39,16 @@
 	<div class="form-group">
 		<label for="birth_date" class="col-sm-3 control-label">出生日期</label>
 		<div class="col-sm-5">
-			<input type="date" name="Employee[birth_date]"  class="form-control" />
+			<input type="date" name="Employee[birth_date]"  class="form-control" value="{{old('Employee')['birth_date'] ?old('Employee')['birth_date']:$employee->birth_date}}" />
 		</div>
 	</div>
 
 	<div class="form-group">
 		<label for="avatar" class="col-sm-3 control-label" >头像</label>
 		<div class="col-sm-5">
-			<input id="avatar" type="file" name="avatar" style="display:none" > 
+			<input id="avatar" type="file" name="avatar" style="display:none"  value="{{old('avatar') ? old('avatar'):$employee->avatar}}"> 
 			<div class="input-group">
-				<input type="text" class="form-control" id="avatarCover" >
+				<input type="text" class="form-control" id="avatarCover"  value="{{old('avatar') ? old('avatar'):$employee->avatar}}">
 				<span class="input-group-btn">
 					<button class="btn btn-default" id='chooseavatarbtn' type="button" >选择文件</button>
 				</span>
@@ -83,7 +83,7 @@
 	<div class="form-group">
 		<label for="date" class="col-sm-3 control-label">入职时间</label>
 		<div class="col-sm-5">
-			<input type="date" name="Employee[date]" value="{{date('Y-m-d')}}" class="form-control" value="{{old('Employee')['date'] ? old('Employee')['date']:$employee->date}}"/>
+			<input type="date" name="Employee[date]" value="{{date('Y-m-d')}}" class="form-control" value="{{old('Employee')['date'] ?date('Y-m-d', old('Employee')['date']):date('Y-m-d',$employee->date)}}"/>
 		</div>
 		<span class="help-block">默认为今天({{date('Y-m-d')}})</span>
 	</div>

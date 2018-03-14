@@ -4,14 +4,17 @@
 <a  data-toggle="collapse" data-parent="#accordion" href="#collapseOne" class="list-group-item  ">
 	<span class="list-group-item-text "><em>信息管理</em><span class="caret"></span></span>
 </a>
-<div class=" panel-collapse collapse in" id="collapseOne">
+<div class=" panel-collapse collapse {{($nav == 'employee'||$nav == 'blueprint'||$nav == 'company')?'in' :" "}} " id="collapseOne">
 	
 	<a href="{{url('employee/show') }}" class="list-group-item {{($nav == 'employee')?'active' :" "}}" >
 		<p class="list-group-item-text text-center">员工管理</p>
 	</a>
 	<a href="{{url('blueprint/index') }}" class="list-group-item {{($nav == 'blueprint')?'active' :" "}}">
-	<p class="list-group-item-text text-center">    图纸库</p>
-</a>
+		<p class="list-group-item-text text-center">图纸库</p>
+	</a>
+	<a href="{{url('company/index') }}" class="list-group-item {{($nav == 'company')?'active' :" "}}">
+		<p class="list-group-item-text text-center">企业信息管理</p>
+	</a>
 </div>
 <a href="{{url('person/index') }}" class="list-group-item {{($nav == 'person')?'active' :" "}}">
 	<p class="list-group-item-text">人事管理</p>

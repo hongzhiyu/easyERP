@@ -1,10 +1,10 @@
 @extends('common.layout')
 @section('nav')
-@include('common._nav',['nav'=>'storage'])
+	@include('common._nav',['nav'=>'order'])
 @stop
 @section('content')
 
-@include('storage._nav',['nav'=>'update'])
+@include('order._nav', ['nav'=>'search'])
 
 <br>
 <div class="panel panel-default">
@@ -24,9 +24,8 @@
 		</form>
 	</div>
 </div>
-
 @stop
 
 @section('js')
-<script src="{{ asset('js/storage/storage.js') }}"></script> 
+<script src="{{ asset('js/order/order.js') }}"></script>
 @stop

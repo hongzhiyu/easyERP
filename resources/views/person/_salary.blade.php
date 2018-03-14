@@ -4,14 +4,9 @@
 @stop
 @section('content')
 
-<div class="row">
-	<div class="col-md-12">
-		<ul class="nav nav-tabs ">
-			<li  role="presentation" ><a  href="{{ url('person/index') }}">假期管理</a></li>
-			<li  role="presentation" class="active"><a  href="{{ url('person/salary') }}">薪资计算</a></li>
-		</ul>
-	</div>
-</div>
+@include('person._nav',['nav'=>'salary'])
+
+
 <br>
 <div id="personcont">
 

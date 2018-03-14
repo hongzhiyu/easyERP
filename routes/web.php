@@ -39,11 +39,18 @@ Route::any('/storage/updatestorage', 'StorageController@updatestorage');
 
 Route::any('/order/index', 'OrderController@index');
 Route::get('/order/detail/{id}', 'OrderController@detail');
+Route::get('/order/search', 'OrderController@search');
 Route::any('/order/add', 'OrderController@add');
 Route::any('/order/delivery', 'OrderController@delivery');
 
 Route::any('/blueprint/index', 'BlueprintController@index');
 Route::any('/blueprint/add', 'BlueprintController@add');
+Route::any('/blueprint/search', 'BlueprintController@search');
 Route::get('/blueprint/update/{id}', 'BlueprintController@update');
+Route::get('/blueprint/delete/{id}', 'BlueprintController@delete');
+
+Route::any('/company/index', 'CompanyController@index');
+Route::any('/company/add', 'CompanyController@add');
+Route::get('/company/detail/{id}', 'CompanyController@detail');
 
 Route::any('/plan/index', 'PlanController@index');

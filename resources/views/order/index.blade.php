@@ -1,16 +1,11 @@
 @extends('common.layout')
-
+@section('nav')
+	@include('common._nav',['nav'=>'order'])
+@stop
 @section('content')
 
-<div class="row">
-	<div class="col-md-12">
-		<ul class="nav nav-tabs ">
-			<li  role="presentation" class="active"><a href="{{ url('order/index') }}">订单列表</a></li>
-			<li  role="presentation" class=""><a  href="{{ url('order/add') }}">添加订单</a></li>
-			<li  role="presentation" class=""><a  href="{{ url('order/delivery') }}">送货单</a></li>
-		</ul>
-	</div>
-</div>
+@include('order._nav', ['nav'=>'index'])
+
 <br>
 <div class="panel panel-default">
 	<div class="panel-body">
@@ -19,7 +14,7 @@
 			<div class="form-inline">
 				<div class="form-group">
 					<select class="form-control input-sm" name="_Date['type']">
-						<option>全部客户</option>
+						<option>--全部客户--</option>
 						<option>嘉诺</option>
 						<option>达意隆</option>
 					</select>
@@ -38,7 +33,7 @@
 		<table  class="table table-hover ">
 			<thead>
 				<tr>
-					<th>序号</th>
+					<th>#</th>
 					<th>所属客户</th>
 					<th>订单编号</th>
 					<th>文件</th>

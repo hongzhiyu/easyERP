@@ -13,18 +13,19 @@
 			{{ csrf_field() }}
 			<div class="form-inline">
 				<div class="form-group">
-					<select class="form-control input-sm" name="_Date['type']">
+					<select class="form-control " name="_Date['type']">
 						<option>--全部客户--</option>
-						<option>嘉诺</option>
+						<option>广州嘉诺工业技术有限公司</option>
 						<option>达意隆</option>
+						<option>惠州阳鑫</option>
 					</select>
-					<select class="form-control input-sm" name="_Date['type']">
+					<select class="form-control " name="_Date['type']">
 						<option>状态</option>
 						<option>确认回传</option>
 						<option value="">已交货</option>
 						<option value="">已付款</option>
-						<option>取消</option>
 					</select>
+					<input type="text" class="form-control" placeholder="订单名称" >
 				</div>
 			<button type="submit" class="btn btn-default btn-sm" >查看</button>
 			</div>

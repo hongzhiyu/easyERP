@@ -15,16 +15,25 @@ class PersonController extends Controller
 
 		return view('person.index',[
 			'names'=>$names
-		]);
+			]);
 	}
+	//展示
+	public function add ( )
+	{
 
+		$names = ['洪志宇', '得到的', 'dsagkl'];
+
+		return view('person.add',[
+			'names'=>$names
+			]);
+	}
 	public function salary ( )
 	{
 		$names = ['洪志宇', '得到的', 'dsagkl'];
 
 		return view('person._salary',[
 			'names'=>$names
-		]);
+			]);
 	}
 	
 
@@ -41,12 +50,12 @@ class PersonController extends Controller
 		$sheet = new Sheet( );
 		$sheetarr = $sheet->deal ( $sheetstr, $days );
 
-				
+
 		$a = view( 'person._sheet' )->with( [
 			'personname' => $personname,
 			'sheetarr' => $sheetarr,
 			'days'=> $days
-		])->render( );
+			])->render( );
 		return $a;		
 
 	}

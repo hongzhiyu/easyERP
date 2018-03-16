@@ -15,13 +15,13 @@
 				<div class="form-group">
 					<label for="name" class="col-sm-2 control-label">图纸型号：</label>
 					<div class="col-sm-5">
-						<input type="text" name="Blueprint[type]" class="form-control"  >
+						<input type="text" name="Blueprint[type]" class="form-control"  value="{{old('Blueprint')['type'] ? old('Blueprint')['type']: ""}}">
 					</div>
 				</div>
 				<div class="form-group">
 					<label for="name" class="col-sm-2 control-label">品名：</label>
 					<div class="col-sm-5">
-						<input type="text" name="Blueprint[name]" class="form-control" >
+						<input type="text" name="Blueprint[name]" class="form-control" value="{{old('Blueprint')['name'] ? old('Blueprint')['name']: ""}}">
 					</div>
 				</div>
 				<div class="form-group">

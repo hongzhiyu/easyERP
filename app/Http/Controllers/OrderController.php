@@ -25,7 +25,7 @@ class OrderController extends Controller
 	{
 		return view( 'order.search');
 	}
-	public function add ( )
+	public function add (Request $request)
 	{
 		return view('order.add');
 	}

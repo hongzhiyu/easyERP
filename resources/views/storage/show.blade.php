@@ -13,18 +13,13 @@
 			{{ csrf_field() }}
 			<div class="form-inline">
 				<div class="form-group">
-					<select class="form-control input-sm" name="_Date['type']">
+					<select class="form-control " name="_Date['type']">
 						<option>全部类型</option>
 						<option>过渡接头</option>
 						<option>套筒</option>
 					</select>
-					<select class="form-control input-sm" name="_Date['type']">
-						<option>状态</option>
-						<option>确认回传</option>
-						<option value="">已交货</option>
-						<option value="">已付款</option>
-						<option>取消</option>
-					</select>
+					
+					<input type="text" class="form-control" placeholder="" >
 				</div>
 				<button type="submit" class="btn btn-default btn-sm" >查看</button>
 			</div>
@@ -36,6 +31,7 @@
 					<th >#</th>
 					<th >型号</th>
 					<th   >所属类型</th>
+					<th>图纸</th>
 					<th  colspan="3">库存位置</th>
 					<th >数量</th>
 					<th >单位</th>
@@ -47,6 +43,7 @@
 					<td >1</td>
 					<td >311-4555-899</td>
 					<td >过渡接头</td>
+					<td></td>
 					<td >A架</td>
 					<td >3-1层</td>
 					<td >15</td>

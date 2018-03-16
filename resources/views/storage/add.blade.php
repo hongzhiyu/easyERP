@@ -20,14 +20,13 @@
 			</div>
 			<div class="form-group ">
 				<label for="name" class="col-sm-2 control-label">类型：</label>
-				<div class="col-sm-3">
+				<div class="col-sm-5">
 					<select name="" class="form-control">
 						<option value="all">过渡接头</option>
 						<option value="am">螺母</option>
 						<option value="pm">套筒</option>
 					</select>
 				</div>
-				<button type="button" class="btn btn-link">新增类型</button>
 
 			</div>
 			<div class="form-group">

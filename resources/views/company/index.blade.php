@@ -29,10 +29,8 @@
 				<tr>
 					<th>#</th>
 					<th>类别</th>
-					<th>ID</th>
 					<th>名称</th>
 					<th>合作日期</th>
-					<th>供应产品</th>
 					<th>操作</th>
 				</tr>
 			</thead>
@@ -41,10 +39,8 @@
 				<tr>
 					<td>1</td>
 					<td>客户</td>
-					<td>20180226006</td>
 					<td>广州嘉诺工业技术有限公司</td>
 					<td>2018/2/27</td>
-					<td>/</td>
 					<td>
 						<div class="btn-group btn-group-xs">
 							<button type="button" class="btn btn-default more" data-id="20180226006">详情</button>

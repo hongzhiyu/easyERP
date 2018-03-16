@@ -64,6 +64,7 @@
 				<tr>
 					<th>#</th>
 					<th>产品名</th>
+					<th>图纸</th>
 					<th>单价</th>
 					<th>数量</th>
 					<th>合计</th>
@@ -77,6 +78,9 @@
 					<td>
 						<strong>M221X1G12D204TZG</strong>
 						<span>螺母</span>
+					</td>
+					<td>
+						<a href="">20180226006.dwg</a>
 					</td>
 					<td>30</td>
 					<td>3</td>
@@ -94,6 +98,9 @@
 					<td>
 						<a href="" title="点击查看图纸"><strong>T221X112G1825H24G</strong></a>
 						<span>焊接头部</span>
+					</td>
+					<td>
+						<a href="">20180226006.dwg</a>
 					</td>
 					<td><a href="" title="查看报价">23.51</a></td>
 					<td>3</td>

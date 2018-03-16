@@ -13,7 +13,7 @@
 		<p class="list-group-item-text text-center">图纸库</p>
 	</a>
 	<a href="{{url('company/index') }}" class="list-group-item {{($nav == 'company')?'active' :" "}}">
-		<p class="list-group-item-text text-center">企业信息管理</p>
+		<p class="list-group-item-text text-center">企业信息</p>
 	</a>
 </div>
 <a href="{{url('person/index') }}" class="list-group-item {{($nav == 'person')?'active' :" "}}">

@@ -9,10 +9,10 @@
 <br>
 <div class="panel panel-default">
 	<div class="panel-body">
-		<form class="form-horizontal" method="post" enctype="multipart/form-data" action="">
+		<form class="form-horizontal" method="post"  action="">
 			{{ csrf_field() }}
 			<div class="form-group">
-			<label for="name" class="col-sm-3 control-label">企业名称</label>
+			<label for="name" class="col-sm-3 control-label">企业全称</label>
 				<div class="col-sm-5">
 					<input type="text" name="Employee[name]" class="form-control"   
 					value="{{old('Employee')['name'] ? old('Employee')['name']:$employee->name}}"
@@ -21,7 +21,7 @@
 				<span class="help-block " ><strong class=" text-danger">必填项目</strong></span>
 			</div>
 			<div class="form-group">
-				<label for="id" class="col-sm-3 control-label">编号</label>
+				<label for="id" class="col-sm-3 control-label">简称</label>
 				<div class="col-sm-5">
 					<input type="text" name="Employee[id]" class="form-control"
 					value="{{old('Employee')['id'] ? old('Employee')['id']:$employee->id}}"
@@ -41,20 +41,43 @@
 			</div>
 
 			<div class="form-group">
-				<label for="work" class="col-sm-3 control-label">供应产品</label>
+				<label for="work" class="col-sm-3 control-label">公司地址</label>
 				<div class="col-sm-5">
 					<input type="text" name="Employee[work]" class="form-control" id="work" 
 					value="{{old('Employee')['work'] ? old('Employee')['work']:$employee->work}}"
 					>
 				</div>
 			</div>
-
+			<div class="form-group">
+				<label for="work" class="col-sm-3 control-label">收货地址</label>
+				<div class="col-sm-5">
+					<input type="text" name="Employee[work]" class="form-control" id="work" 
+					value="{{old('Employee')['work'] ? old('Employee')['work']:$employee->work}}"
+					>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="work" class="col-sm-3 control-label">收货联系人</label>
+				<div class="col-sm-5">
+					<input type="text" name="Employee[work]" class="form-control" id="work" 
+					value="{{old('Employee')['work'] ? old('Employee')['work']:$employee->work}}"
+					>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="work" class="col-sm-3 control-label">联系方式</label>
+				<div class="col-sm-5">
+					<input type="text" name="Employee[work]" class="form-control" id="work" 
+					value="{{old('Employee')['work'] ? old('Employee')['work']:$employee->work}}"
+					>
+				</div>
+			</div>
 			<div class="form-group">
 				<label for="date" class="col-sm-3 control-label">合作时间</label>
 				<div class="col-sm-5">
-					<input type="month" name="Employee[date]" value="{{date('Y-m-d')}}" class="form-control" value="{{old('Employee')['date'] ? old('Employee')['date']:$employee->date}}"/>
+					<input type="month" name="Employee[date]" value="{{date('Y-m')}}" class="form-control" value="{{old('Employee')['date'] ? old('Employee')['date']:$employee->date}}"/>
 				</div>
-				<span class="help-block">默认为今天({{date('Y-m')}})</span>
+				<span class="help-block">默认为本月({{date('Y-m')}})</span>
 			</div>
 			<br>
 			<div class="form-group ">

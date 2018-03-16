@@ -15,7 +15,6 @@
 	<div class="panel-body">
 		<form action="" role="form">
 			<div class="form-inline">
-					
 				<div class="input-group">
 					<input type="text" class="form-control" placeholder="图纸编号" >
 					<span class="input-group-btn">
@@ -43,7 +42,6 @@
 					<td>{{ $i + 1 }}</td>
 					<td>{{$bps[$i]->type}}</td>
 					<td>{{$bps[$i]->name}}</td>
-					<td>{{$bps[$i]->type}}</td>
 					<td><a href="{{ '../../storage/app/files/blueprint/'.$bps[ $i ]->bpfile}}">{{$bps[$i]->bpfile}}</a></td>
 					<td>{{ date('Y-m-d', $bps[ $i ]->date)}}</td>					
 					<td>

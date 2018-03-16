@@ -29,6 +29,7 @@ Route::any('/employee/delete/{id}','EmployeeController@delete');
 Route::any('/person/index','PersonController@index');
 Route::any('/person/day','PersonController@day');
 Route::any('/person/salary','PersonController@salary');
+Route::any('/person/add','PersonController@add');
 Route::post('/person/getsheet', 'PersonController@getsheet');
 
 Route::any('/storage/index', 'StorageController@index');

@@ -1,6 +1,6 @@
 @extends('common.layout')
 @section('nav')
-	@include('common._nav',['nav'=>'order'])
+@include('common._nav',['nav'=>'order'])
 @stop
 @section('content')
 
@@ -27,7 +27,7 @@
 					</select>
 					<input type="text" class="form-control" placeholder="订单名称" >
 				</div>
-			<button type="submit" class="btn btn-default btn-sm" >查看</button>
+				<button type="submit" class="btn btn-default btn-sm" >查看</button>
 			</div>
 		</form>
 		<br>
@@ -38,7 +38,7 @@
 					<th>所属客户</th>
 					<th>订单编号</th>
 					<th>文件</th>
-					<th>接受日期</th>
+					<th>接收日期</th>
 					<th>交货日期</th>
 					<th>状态</th>
 					<th>操作</th>
@@ -46,81 +46,41 @@
 			</thead>
 
 			<tbody>
+				@for($i = 0; $i < count( $orders ); $i ++ )
 				<tr>
-					<td>1</td>
-					<td>广州嘉诺</td>
-					<td>20180226006</td>
-					<td><a href="">20180226006.pdf</a></td>
-					<td>2018/2/27</td>
-					<td>2018/3/1</td>
+					<td>{{$i+1}}</td>
+					<td>{{$orders[$i]->owner}}</td>
+					<td>{{$orders[$i]->id}}</td>
 					<td>
-						<span class="label label-danger">取消</span>
+						<a href="{{ '../../storage/app/files/order/'.$orders[ $i ]->orderfile}}">{{$orders[ $i ]->orderfile}}</a>
+					</td>
+					<td>{{$orders[$i]->date}}</td>
+					<td>{{$orders[$i]->delivery_date}}</td>
+					<td>
+						@switch($orders[$i]->state)
+						@case( 0 )
+						<span class="label label-danger">未确认</span>
+						@break
+						@case( 1 )
+						<span class="label   label-info	">确认回传</span>
+						@break
+						@case( 2 )
+						<span class="label   label-primary">已交货</span>
+						
+						@default
+						@endswitch
+
 
 					</td>
 					<td>
 						<div class="btn-group btn-group-xs">
-							<button type="button" class="btn btn-default">详情</button>
-							<button type="button" class="btn btn-default">删除</button>
+							<button type="button" class="btn btn-default more" data-id="{{$orders[$i]->id}}">详情</button>
+							<button type="button" class="btn btn-default delete" data-id="{{$orders[$i]->id}}">删除</button>
 						</div>
 					</td>
 				</tr>
-				<tr>
-					<td>2</td>
-					<td>广州嘉诺</td>
-					<td>20180226006</td>
-					<td><a href="">20180226006.pdf</a></td>
-					<td>2018/2/27</td>
-					<td>2018/3/1</td>
-					<td>
-						<span class="label label-info">确认回传</span>
-						<span class="label label-primary">已交货</span>
-						<span class="label label-warning">注意货期</span>
-
-					</td>
-					<td>
-						<div class="btn-group btn-group-xs">
-							<button type="button" class="btn btn-default" href="index">详情</button>
-							<button type="button" class="btn btn-default">删除</button>
-						</div>
-					</td>
-				</tr>
-
-				<tr>
-					<td>3</td>
-					<td>广州嘉诺</td>
-					<td>20180226006</td>
-					<td><a href="">20180226006.pdf</a></td>
-					<td>2018/2/27</td>
-					<td>2018/3/1</td>
-					<td>
-						<span class="label label-success">已付款</span>
-
-					</td>
-					<td>
-						<div class="btn-group btn-group-xs">
-							<button type="button" class="btn btn-default">详情</button>
-							<button type="button" class="btn btn-default">删除</button>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td>4</td>
-					<td>广州嘉诺</td>
-					<td>20180226006</td>
-					<td><a href="">20180226006.pdf</a></td>
-					<td>2018/2/27</td>
-					<td>2018/3/1</td>
-					<td>
-						<span class="label label-warning">注意货期</span>
-					</td>
-					<td>
-						<div class="btn-group btn-group-xs">
-							
-							<button type="button" class="btn btn-default more" data-id="20180226006">详情</button>
-							<button type="button" class="btn btn-default delete">删除</button>
-						</div>
-					</td>
-				</tr>
+				@endfor
+				
 			</tbody>
 		</table>
 	</div>

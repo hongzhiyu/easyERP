@@ -42,6 +42,7 @@ Route::any('/order/index', 'OrderController@index');
 Route::get('/order/detail/{id}', 'OrderController@detail');
 Route::get('/order/search', 'OrderController@search');
 Route::any('/order/add', 'OrderController@add');
+Route::any('/order/delete/{id}', 'OrderController@delete');
 Route::any('/order/delivery', 'OrderController@delivery');
 
 Route::any('/blueprint/index', 'BlueprintController@index');

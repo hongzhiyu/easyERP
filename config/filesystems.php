@@ -72,6 +72,12 @@ return [
             'root' => storage_path('app/files/blueprint'),
         ],
 
+         //订单
+        'order' => [
+            'driver' => 'local',
+            'root' => storage_path('app/files/order'),
+        ],
+
 
         's3' => [
             'driver' => 's3',

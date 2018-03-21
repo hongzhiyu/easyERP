@@ -18,9 +18,21 @@
 			</div>
 			<br>
 			<div class="form-group">
+				<label for="name" class="col-sm-2 control-label">状态</label>
+				<div class="col-sm-2 ">
+					<select name="Order[state]" class="form-control">
+						<option value="0">-----</option>
+						<option value="1">确认回传</option>
+						<option value="2">交货完成</option>
+						<option value="3">结款</option>
+					</select>
+				</div>
+
+			</div>
+			<div class="form-group">
 				<label for="name" class="col-sm-2 control-label">订单编号</label>
 				<div class="col-sm-6">
-					<input type="text" name="Order[name]" class="form-control" id="name"  placeholder="订单编号"	>
+					<input type="text" name="Order[id]" class="form-control"   placeholder="订单编号"	>
 				</div>
 			</div>
 			<div class="form-group">
@@ -54,7 +66,7 @@
 			<div class="form-group">
 				<label for="name" class="col-sm-2 control-label ">订单文件</label>
 				<div class="col-sm-6">
-					<input id="orderfile" type="file" style="display:none" > 
+					<input id="orderfile" name="orderfile" type="file" style="display:none" > 
 					<div class="input-group">
 						<input type="text" class="form-control" id="orderfileCover" >
 						<span class="input-group-btn">
@@ -73,59 +85,67 @@
 				<caption>已添加项目</caption>
 				<thead>
 					<tr>
-						<th>#</th>
+						<th class="wid30">#</th>
 						<th>型号</th>
 						<th>品名</th>
 						<th>产品图纸</th>
-						<th>单价</th>
-						<th>数量</th>
-						<th>合计</th>
+						<th class="wid80">单价</th>
+						<th class="wid80">数量</th>
+						<th class="wid80">合计</th>
 						<th>操作</th>
 					</tr>
 				</thead>
-				<tbody>
+				<tbody id="tb">
 					<tr>
-						<td style="width: 5%">1</td>
-						<td  style="width: 20%">
-							<input type="text" name="Products[0][name]" class="form-control input-sm"  >
+						<td >1</td>
+						<td>
+							<input type="text" name="Products[0][type]" class="form-control input-sm"  >
 						</td>
-						<td style="width: 20%">
+						<td>
 							<input type="text" name="Products[0][name]" class="form-control input-sm"   >
 						</td>
-						<td style="width: 20%">
-						<input id="lefile" type="file" style="display:none" > 
+						<td>
+							<input class="lefile" type="file" style="display:none" name="product_file[0]"> 
 							<div class="input-group" >
-								<input type="text" class="form-control input-sm" id="fileCover" >
+								<input type="text" class="form-control input-sm fileCover" >
 								<span class="input-group-btn">
-									<button class="btn btn-default btn-sm" id='choosebtn'	 type="button" >选择文件</button>
+									<button class="btn btn-default btn-sm choosebtn" type="button" >选择文件</button>
 								</span>
 							</div>
-							</td>
-							<td style="width: 80px">
-							<div class="input-group">
-
-								<input type="text" id="price" name="Products[0][price]" class="form-control input-sm"   >
-							</div></td>
-							<td style="width: 80px"><input type="number" id="number" name="Products[0][number]" class="form-control input-sm"  value="1"  ></td>
-							<td style="width: 80px">90</td>
-							<td>
-								<div class="btn-group btn-group-sm">
-									<button type="button" class="btn btn-default">修改</button>
-									<button type="button" class="btn btn-default">删除</button>
-								</div>
-							</td>
-						</tr>
-					</tbody>
-				</table>
-				<button type="button" class="btn btn-primary pull-right">新增项目 </button>
-				<br>
-				<button type="submit" class="btn btn-success">提交</button>
-			</form>
-		</div>
+						</td>
+						<td>
+							<input type="text"  name="Products[0][price]" class="form-control input-sm price"   >
+						</td>
+						<td>
+							<input type="number"  name="Products[0][number]" class="form-control input-sm number"  value="1"  >
+						</td>
+						<td>
+							
+							<input type="text" name="Products[0][total]" class="form-control input-sm total"   >
+						</td>
+						<td>
+								<button type="button" class="btn btn-default clean">清空</button>
+							</div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<div class="btn-group">
+				<button type="button" id="add_product" class="btn btn-primary">新增项目 </button>
+				<button type="button" id="product_delete" class="btn btn-default product_delete">删行 </button>
+			</div>
+			<br>
+			<br>
+			<button type="submit" class="btn btn-success">提交</button>
+		</form>
 	</div>
+</div>
 
-	@stop
+@stop
 
-	@section('js')
-	<script src="{{ asset('js/order/order.js') }}"></script>
-	@stop
+@section('js')
+<script src="{{ asset('js/order/order.js') }}"></script>
+@stop
+@section('css')
+<link rel="stylesheet" type="text/css" href="{{ asset('css/order/order.css') }}">
+@stop
